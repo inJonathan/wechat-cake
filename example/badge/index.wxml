@@ -1,0 +1,26 @@
+<view class="container">
+
+  <view class="doc-title">BADGE</view>
+
+  <view class="demo">
+    <view class="demo__item">
+      <view class="demo__icon zan-badge">
+      </view>
+    </view>
+    <view class="demo__item">
+      <view class="demo__icon zan-badge">
+        <view class="zan-badge__count">9</view>
+      </view>
+    </view>
+    <view class="demo__item">
+      <view class="demo__icon zan-badge">
+        <view class="zan-badge__count">19</view>
+      </view>
+    </view>
+    <view class="demo__item">
+      <view class="demo__icon zan-badge">
+        <view class="zan-badge__count">99+</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,70 @@
+<import src="/dist/steps/index.wxml" />
+
+<view class="container">
+
+  <view class="doc-title">STEPS</view>
+
+  <view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
+        <template is="zan-steps" data="{{ type: 'horizon', steps: steps }}"></template>
+      </view>
+    </view>
+
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
+        <template is="zan-steps" data="{{ type: 'horizon', steps: steps2 }}"></template>
+      </view>
+    </view>
+
+    <view class="zan-cell zan-cell--last-child">
+      <view class="zan-cell__bd">
+        <template is="zan-steps" data="{{ type: 'horizon', steps: steps3 }}"></template>
+      </view>
+    </view>
+  </view>
+
+  <view class="zan-panel-title">有描述的steps</view>
+  <view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
+        <template is="zan-steps" data="{{ type: 'horizon', hasDesc: true, steps: steps }}"></template>
+      </view>
+    </view>
+
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
+        <template is="zan-steps" data="{{ type: 'horizon', hasDesc: true, steps: steps2 }}"></template>
+      </view>
+    </view>
+
+    <view class="zan-cell zan-cell--last-child">
+      <view class="zan-cell__bd">
+        <template is="zan-steps" data="{{ type: 'horizon', hasDesc: true, steps: steps3 }}"></template>
+      </view>
+    </view>
+  </view>
+
+  <view class="zan-panel-title">垂直方向的steps</view>
+  <view class="zan-panel">
+    <view class="zan-cell zan-cell">
+      <view class="zan-cell__bd">
+        <template is="zan-steps" data="{{ type: 'vertical', hasDesc: true, steps }}"></template>
+      </view>
+    </view>
+
+    <view class="zan-cell zan-cell--last-child">
+      <view class="zan-cell__bd">
+        <template is="zan-steps" data="{{ type: 'vertical', steps }}"></template>
+      </view>
+    </view>
+  </view>
+
+  <view class="zan-panel-title">可自定义class</view>
+  <view class="zan-panel">
+    <view class="zan-cell__bd">
+      <template is="zan-steps" data="{{ type: 'vertical', steps, className: 'my-class' }}"></template>
+    </view>
+  </view>
+
+</view>

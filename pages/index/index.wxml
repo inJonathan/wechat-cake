@@ -1,0 +1,26 @@
+<import src="/dist/tab/index.wxml" />
+
+<view class="container">
+
+  <image class="head-img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497864113713&di=3a89a94f2c8af8093d0ee5f5e0241ae8&imgtype=0&src=http%3A%2F%2Fpic114.nipic.com%2Ffile%2F20161113%2F24069377_122204717000_2.jpg"></image>
+
+  <template is="zan-tab" data="{{tab: tab1, componentId: 'tab1'}}"></template>
+
+  <view class="list">
+
+    <view class="goods-wrap" wx:key="" wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" bindtap="bindTapCase" data-article-id="{{currentCases[index].articleId}}">
+      <image class="goods-img" src="http://www.xcxkj.tech/images/xnj/t1.jpg"></image>
+      <view class="text">
+        <view class="title">
+          <text>蔬香牛仔粒蔬香牛仔粒蔬香牛仔粒蔬香牛仔粒蔬香粒蔬香粒</text>
+        </view>
+        <view class="price">
+          <text class="new">￥23.00</text>
+          <text class="old">￥23.00</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

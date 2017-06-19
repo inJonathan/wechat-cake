@@ -1,0 +1,18 @@
+<view class="container">
+
+  <view class="doc-title">PANEL</view>
+
+  <view class="zan-panel-title">标题</view>
+  <view class="zan-panel">
+    <view style="padding: 15px;">内容</view>
+  </view>
+
+  <view class="zan-panel">
+    <view style="padding: 15px;">内容</view>
+  </view>
+
+  <view class="zan-panel">
+    <view style="padding: 15px;">内容</view>
+  </view>
+
+</view>

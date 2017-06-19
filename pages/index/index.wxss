@@ -1,0 +1,59 @@
+.head-img {
+  display: block;
+  width: 100%;
+  height: 350rpx;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 5px 5px;
+}
+
+.goods-wrap {
+  flex-direction: column;
+  width: 50%;
+  padding: 8px 5px;
+}
+
+.goods-img {
+  width: 100%;
+  height: 300rpx;
+  border-radius: 10px;
+}
+
+.text {
+  width: 100%;
+}
+
+.title {
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.price {
+  width: 100%;
+}
+
+.price > text {
+  font-size: 14px;
+}
+.price .new {
+  font-weight: bold;
+  color: #ff4343;
+  margin-right: 5px;
+}
+.price .old {
+  color: #666;
+  font-size: 12px;
+  text-decoration: line-through;
+}
+
+scroll-view {
+  height: 100%;
+}

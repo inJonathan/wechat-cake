@@ -1,0 +1,6 @@
+.my-class {
+  padding: 10px;
+}
+.my-class .zan-steps__step--done {
+  color: #f44;
+}

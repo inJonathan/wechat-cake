@@ -1,0 +1,18 @@
+<view class="container">
+
+  <view class="doc-title">DIALOG</view>
+
+  <view class="zan-btns" style="margin-top: 30vh;">
+    <button class="zan-btn" bindtap="toggleDialog">
+      显示Dialog
+    </button>
+  </view>
+
+  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+    <view class="zan-dialog__mask" bindtap="toggleDialog" />
+    <view class="zan-dialog__container">
+      <view style="padding: 100px 0; text-align: center;">Dialog内容</view>
+    </view>
+  </view>
+
+</view>
