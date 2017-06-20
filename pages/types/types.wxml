@@ -1,0 +1,35 @@
+<scroll-view class="types" scroll-y="true" style="height:{{scrollHeight}}px;">
+
+  <view class="type {{current == 1 ? 'active' : ''}}" bindtap="tapTpye" data-current="1">
+    <view class="border"></view>
+    <text>套餐</text>
+  </view>
+
+  <view class="type {{current == 2 ? 'active' : ''}}" bindtap="tapTpye" data-current="2">
+    <view class="border"></view>
+    <text>套餐</text>
+  </view>
+
+  <view class="type {{current == 3 ? 'active' : ''}}" bindtap="tapTpye" data-current="3">
+    <view class="border"></view>
+    <text>套餐套餐套餐</text>
+  </view>
+
+</scroll-view>
+
+<scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" class="container">
+  <view style="margin:30px 0;">349057w938r7923</view>
+  <view style="margin:30px 0;">349057w938r7923</view>
+  <view style="margin:30px 0;">349057w938r7923</view>
+  <view style="margin:30px 0;">349057w938r7923</view>
+  <view style="margin:30px 0;">349057w938r7923</view>
+  <view style="margin:30px 0;">349057w938r7923</view>
+  <view style="margin:30px 0;">349057w938r7923</view>
+  <view style="margin:30px 0;">349057w938r7923</view>
+  <view style="margin:30px 0;">349057w938r7923</view>
+  <view style="margin:30px 0;">349057w938r7923</view>
+  <view style="margin:30px 0;">349057w938r7923</view>
+  <view style="margin:30px 0;">349057w938r7923</view>
+  <view style="margin:30px 0;">349057w938r7923</view>
+  <view style="margin:30px 0;">349057w938r7923</view>
+</scroll-view>

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/types/types",
     "pages/index/index",
     "example/dashboard/index",
     "example/btn/index",
@@ -38,6 +39,12 @@
         "text": "首页",
         "iconPath": "images/index.png",
         "selectedIconPath": "images/index-active.png"
+      },
+      {
+        "pagePath": "pages/types/types",
+        "text": "分类",
+        "iconPath": "images/type.png",
+        "selectedIconPath": "images/type-active.png"
       },
       {
         "pagePath": "example/dashboard/index",

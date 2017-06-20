@@ -1,0 +1,41 @@
+.types {
+  width: 25%;
+  float: left;
+  background-color: #ebebeb;
+}
+
+.type {
+  position: relative;
+  width: 100%;
+  padding: 40rpx 5px;
+  font-size: 14px;
+  text-align: center;
+  border-bottom: 1rpx solid #bebebe;
+}
+
+.border {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5rpx;
+  height: 100%;
+  background-color: red;
+}
+
+.type.active {
+  background-color: #F9F9F9;
+}
+
+.type.active .border {
+  display: block;
+}
+
+.container {
+  position: absolute;
+  width: 75%;
+  top: 0;
+  right: 0;
+  padding: 5px;
+}
