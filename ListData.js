@@ -10,7 +10,7 @@ module.exports = {
         {
           "gid": "1",
           "pic": "http://www.xcxkj.tech/images/xnj/t1.jpg",
-          "name": "阿拉斯加烤鸡排套餐",
+          "name": "阿拉斯加烤鸡排套餐阿拉斯加烤鸡排套餐",
           "currentPrice": "23.00",
           "originalPrice": "28.00"
         },
@@ -20,6 +20,27 @@ module.exports = {
           "name": "澳洲肉眼牛排套餐",
           "currentPrice": "28.00",
           "originalPrice": "35.00"
+        },
+        {
+          "gid": "1",
+          "pic": "http://www.xcxkj.tech/images/xnj/t1.jpg",
+          "name": "阿拉斯加烤",
+          "currentPrice": "23.00",
+          "originalPrice": "28.00"
+        },
+        {
+          "gid": "1",
+          "pic": "http://www.xcxkj.tech/images/xnj/t1.jpg",
+          "name": "阿餐",
+          "currentPrice": "23.00",
+          "originalPrice": "28.00"
+        },
+        {
+          "gid": "1",
+          "pic": "http://www.xcxkj.tech/images/xnj/t1.jpg",
+          "name": "阿拉斯加烤鸡排套餐阿拉斯加烤鸡排套餐",
+          "currentPrice": "23.00",
+          "originalPrice": "28.00"
         }
       ]
     },

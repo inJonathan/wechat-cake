@@ -1,35 +1,31 @@
-<scroll-view class="types" scroll-y="true" style="height:{{scrollHeight}}px;">
+<import src="/dist/loadmore/index.wxml" />
 
-  <view class="type {{current == 1 ? 'active' : ''}}" bindtap="tapTpye" data-current="1">
-    <view class="border"></view>
-    <text>套餐</text>
-  </view>
+<template is="zan-loadmore" data="{{loading: isLoading}}" />
 
-  <view class="type {{current == 2 ? 'active' : ''}}" bindtap="tapTpye" data-current="2">
-    <view class="border"></view>
-    <text>套餐</text>
-  </view>
+<view wx:if="{{!isLoading}}">
+  <scroll-view class="types" scroll-y="true" style="height:{{scrollHeight}}px;">
+    <view wx:key="" wx:for="{{typeData}}" class="type {{current == typeData[index].tid ? 'active' : ''}}" bindtap="tapTpye" data-current="{{typeData[index].tid}}">
+      <view class="border"></view>
+      <text>{{typeData[index].name}}</text>
+    </view>
+  </scroll-view>
 
-  <view class="type {{current == 3 ? 'active' : ''}}" bindtap="tapTpye" data-current="3">
-    <view class="border"></view>
-    <text>套餐套餐套餐</text>
-  </view>
+  <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" class="container">
 
-</scroll-view>
-
-<scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" class="container">
-  <view style="margin:30px 0;">349057w938r7923</view>
-  <view style="margin:30px 0;">349057w938r7923</view>
-  <view style="margin:30px 0;">349057w938r7923</view>
-  <view style="margin:30px 0;">349057w938r7923</view>
-  <view style="margin:30px 0;">349057w938r7923</view>
-  <view style="margin:30px 0;">349057w938r7923</view>
-  <view style="margin:30px 0;">349057w938r7923</view>
-  <view style="margin:30px 0;">349057w938r7923</view>
-  <view style="margin:30px 0;">349057w938r7923</view>
-  <view style="margin:30px 0;">349057w938r7923</view>
-  <view style="margin:30px 0;">349057w938r7923</view>
-  <view style="margin:30px 0;">349057w938r7923</view>
-  <view style="margin:30px 0;">349057w938r7923</view>
-  <view style="margin:30px 0;">349057w938r7923</view>
-</scroll-view>
+    <view class="list">
+      <view class="goods-wrap" wx:key="" wx:for="{{listData.goods}}" bindtap="bindTapCase" data-article-id="{{currentCases[index].articleId}}">
+        <image class="goods-img" src="{{listData.goods[index].pic}}"></image>
+        <view class="text">
+          <view class="title">
+            <text>{{listData.goods[index].name}}</text>
+          </view>
+          <view class="price">
+            <text class="new">￥{{listData.goods[index].currentPrice}}</text>
+            <text class="old">￥{{listData.goods[index].originalPrice}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+  </scroll-view>
+</view>

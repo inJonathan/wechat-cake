@@ -9,6 +9,7 @@ Page(Object.assign({}, Zan.Tab, {
   },
   onLoad: function () {
 
+    // 模拟请求
     setTimeout(() => {
       this.setData({
         isLoading: false
