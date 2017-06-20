@@ -1,14 +1,13 @@
 .types {
   width: 25%;
   float: left;
-  background-color: #ebebeb;
+  background-color: #f0f0f0;
 }
 
 .type {
   position: relative;
   width: 100%;
-  padding: 40rpx 5px;
-  font-size: 14px;
+  padding: 35rpx 5px;
   text-align: center;
   border-bottom: 1rpx solid #bebebe;
 }
@@ -21,10 +20,11 @@
   left: 0;
   width: 5rpx;
   height: 100%;
-  background-color: red;
+  background-color: #f44;
 }
 
 .type.active {
+  color: #f44;
   background-color: #F9F9F9;
 }
 
@@ -63,12 +63,12 @@
 }
 
 .title {
-  font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  margin: 2px 0;
 }
 
 .price {
@@ -80,7 +80,7 @@
 }
 .price .new {
   font-weight: bold;
-  color: #ff4343;
+  color: #f44;
   margin-right: 5px;
 }
 .price .old {

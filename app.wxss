@@ -5,6 +5,10 @@ view {
     box-sizing: border-box;
 }
 
+view,text {
+  font-size: 12px;
+}
+
 .container {
   background: #F9F9F9;
   overflow: hidden;

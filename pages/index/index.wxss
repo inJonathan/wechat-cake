@@ -4,6 +4,19 @@
   height: 350rpx;
 }
 
+.tab-wrap view {
+  font-size: 12px;
+}
+
+.zan-tab {
+  height: 40px;
+}
+
+.zan-tab__title {
+  height: 40px;
+  line-height: 40px;
+}
+
 .list {
   display: flex;
   flex-wrap: wrap;
@@ -33,6 +46,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  margin: 2px 0;
 }
 
 .price {
@@ -44,7 +58,7 @@
 }
 .price .new {
   font-weight: bold;
-  color: #ff4343;
+  color: #f44;
   margin-right: 5px;
 }
 .price .old {
