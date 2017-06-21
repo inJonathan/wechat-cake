@@ -12,7 +12,7 @@ function handle(e, num) {
 function callback(componentId, quantity) {
   quantity = +quantity;
   var e = { componentId, quantity };
-  console.info('[zan:quantity:change]', e);
+  // console.info('[zan:quantity:change]', e);
 
   if (this.handleZanQuantityChange) {
     this.handleZanQuantityChange(e);

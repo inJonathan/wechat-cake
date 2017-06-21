@@ -1,11 +1,11 @@
 var Zan = require('../../dist/index');
-var ListData = require('../../ListData.js');
+var GoodList = require('../../GoodList.js');
 
 Page(Object.assign({}, Zan.Tab, {
   data: {
     isLoading: true,
-    index_tab: {},
-    listData: {}
+    indexTab: {},
+    goodData: {}
   },
   onLoad: function () {
 
@@ -18,16 +18,16 @@ Page(Object.assign({}, Zan.Tab, {
 
     // 初始化tab
     let types = [];
-    for (let i in ListData.type) {
+    for (let i in GoodList.type) {
       let typeItem = {};
-      if (ListData.type[i].recommended) {
-        typeItem.id = ListData.type[i].tid;
-        typeItem.title = ListData.type[i].name;
+      if (GoodList.type[i].recommended) {
+        typeItem.id = GoodList.type[i].tid;
+        typeItem.title = GoodList.type[i].name;
         types.push(typeItem);
       }
     }
     this.setData({
-      index_tab: {
+      indexTab: {
         list: types,
         selectedId: 1,
         scroll: false
@@ -38,11 +38,11 @@ Page(Object.assign({}, Zan.Tab, {
     this.setGoodList(1);
 
   },
-  setGoodList(obj) {
-    for (let i in ListData.type) {
-      if (ListData.type[i].tid == obj) {
+  setGoodList(typ) {
+    for (let i in GoodList.type) {
+      if (GoodList.type[i].tid == typ) {
         this.setData({
-          listData: ListData.type[i]
+          goodData: GoodList.type[i]
         });
       }
     }

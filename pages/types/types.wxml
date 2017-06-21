@@ -13,15 +13,15 @@
   <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" class="container">
 
     <view class="list">
-      <view class="goods-wrap" wx:key="" wx:for="{{listData.goods}}" bindtap="bindTapCase" data-article-id="{{currentCases[index].articleId}}">
-        <image class="goods-img" src="{{listData.goods[index].pic}}"></image>
+      <view class="goods-wrap" wx:key="" wx:for="{{goodData.goods}}" bindtap="tapGood" data-gid="{{goodData.goods[index].gid}}">
+        <image class="goods-img" src="{{goodData.goods[index].pic}}"></image>
         <view class="text">
           <view class="title">
-            <text>{{listData.goods[index].name}}</text>
+            <text>{{goodData.goods[index].name}}</text>
           </view>
           <view class="price">
-            <text class="new">￥{{listData.goods[index].currentPrice}}</text>
-            <text class="old">￥{{listData.goods[index].originalPrice}}</text>
+            <text class="new">￥{{goodData.goods[index].currentPrice}}</text>
+            <text class="old">￥{{goodData.goods[index].originalPrice}}</text>
           </view>
         </view>
       </view>

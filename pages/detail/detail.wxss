@@ -1,0 +1,132 @@
+@import "../../wxParse/wxParse.wxss";
+
+swiper {
+  height: 750rpx;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.now {
+  display: inline-block;
+  color: #f44;
+  font-size: 20px;
+  font-weight: bold;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 5px;
+}
+
+.old {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  color: #666;
+  font-size: 14px;
+  height: 24px;
+  line-height: 24px;
+  text-decoration: line-through;
+}
+
+.select-wrap view {
+  font-size: 14px;
+}
+
+.select {
+  color: #999;
+  margin-right: 10px;
+}
+
+.detailtitle {
+  font-size: 15px;
+  padding: 0px 15px 10px 15px;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8c8;
+  border-style: solid;
+  transform: translateY(-50%) matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+}
+
+.container-wrap {
+  position: relative;
+  padding: 0 15px;
+}
+
+.dlog_btn {
+  z-index: 3;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #fff;
+}
+
+.zan-icon-close {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 20px;
+  padding: 8px 10px;
+}
+
+.dlog_box {
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.dlog_img {
+  float: left;
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 10px;
+}
+
+.dlog_price {
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #f44;
+}
+
+.dlog_count > text, .dlog_selected > text {
+  color: #999;
+}
+
+.dlog_count {
+  line-height: 22px;
+}
+
+.dlog_title {
+  width: 100%;
+  margin: 15px 0;
+  margin-top: 0;
+  color: #999;
+}
+
+.zan-label {
+  height: auto;
+}
+
+.zan-quantity--small {
+  float: right;
+  margin-top: -20px;
+}

@@ -1,6 +1,6 @@
 @import "dist/index.wxss";
 
-view {
+view, scroll-view {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }

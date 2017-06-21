@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/types/types",
     "pages/index/index",
+    "pages/detail/detail",
     "example/dashboard/index",
+    "pages/types/types",
     "example/btn/index",
     "example/badge/index",
     "example/cell/index",

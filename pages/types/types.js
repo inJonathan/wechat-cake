@@ -1,14 +1,13 @@
-var ListData = require('../../ListData.js');
+var GoodList = require('../../GoodList.js');
 
 Page({
   data: {
     isLoading: true,
     current: 1,
     typeData: {},
-    listData: {}
+    goodData: {}
   },
   onLoad() {
-    console.log(ListData.type)
 
     // 模拟请求
     setTimeout(() => {
@@ -29,7 +28,7 @@ Page({
 
     // 初始化商品列表
     this.setData({
-      typeData: ListData.type
+      typeData: GoodList.type
     });
 
     // 初始化商品列表
@@ -42,11 +41,17 @@ Page({
     });
     this.setGoodList(event.currentTarget.dataset.current);
   },
-  setGoodList(obj) {
-    for (let i in ListData.type) {
-      if (ListData.type[i].tid == obj) {
+  tapGood(event) {
+    console.log(event.currentTarget.dataset.gid)
+    wx.navigateTo({
+      url: '../detail/detail?gid=${event.currentTarget.dataset.gid}'
+    });
+  },
+  setGoodList(typ) {
+    for (let i in GoodList.type) {
+      if (GoodList.type[i].tid == typ) {
         this.setData({
-          listData: ListData.type[i]
+          goodData: GoodList.type[i]
         });
       }
     }

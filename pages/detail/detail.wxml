@@ -1,0 +1,82 @@
+<import src="../../wxParse/wxParse.wxml" />
+<import src="../../dist/quantity/index.wxml" />
+
+<view class="container">
+
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:key="" wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="zan-panel">
+    <view style="padding: 15px;">
+      <text class="title">阿拉斯加烤鸡排套餐阿拉斯加烤鸡排套餐阿拉斯加烤鸡排套餐</text>
+      <text class="now">￥23.00</text>
+      <text class="old">￥28.00</text>
+    </view>
+  </view>
+
+  <view class="zan-panel select-wrap">
+    <view class="zan-cell zan-cell--access" bindtap="toggleDialog">
+      <view class="select">已选</view>
+      <view class="zan-cell__bd">
+        <view class="">2kg</view>
+      </view>
+      <view class="icon"></view>
+    </view>
+  </view>
+
+  <view class="zan-panel">
+    <view style="padding: 10px 0;">
+      <view class="zan-panel-title detailtitle">商品详情</view>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+  </view>
+
+  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+    <view class="zan-dialog__mask" bindtap="toggleDialog" />
+
+    <view class="zan-dialog__container" style="width:100%;max-height:800rpx;">
+
+      <scroll-view scroll-y="true" class="container-wrap" style="width:100%;max-height:850rpx;">
+
+        <view class="zan-icon zan-icon-close" bindtap="toggleDialog"></view>
+        <view class="dlog_box" style="padding-top:20px;">
+          <image src="http://www.xcxkj.tech/images/xnj/t2.jpg" class="dlog_img" />
+          <view class="right">
+            <view class="dlog_price">￥23.00</view>
+            <view class="dlog_count">
+              <text>库存：</text>100</view>
+            <view class="dlog_selected">
+              <text>已选：</text>2kg</view>
+          </view>
+        </view>
+
+        <view class="dlog_box">
+          <view class="dlog_title">种类</view>
+          <view class="zan-label zan-label--primary">2kg</view>
+          <view class="zan-label">5kg</view>
+        </view>
+
+        <view class="dlog_box">
+          <view class="dlog_title">数量</view>
+          <template is="zan-quantity" data="{{ ...quantity, componentId: 'quantity', size: 'small' }}" />
+        </view>
+
+        <view style="width:100%;height:100px;"></view>
+
+      </scroll-view>
+
+      <view class="dlog_btn">
+        <button class="zan-btn zan-btn--large zan-btn--danger">立即购买</button>
+      </view>
+
+    </view>
+
+  </view>
+
+
+</view>

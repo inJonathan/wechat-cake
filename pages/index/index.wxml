@@ -8,19 +8,19 @@
   <template is="zan-loadmore" data="{{loading: isLoading}}" />
 
   <view class="tab-wrap" wx:if="{{!isLoading}}">
-    <template is="zan-tab" data="{{tab: index_tab, componentId: 'index_tab'}}"></template>
+    <template is="zan-tab" data="{{tab: indexTab, componentId: 'indexTab'}}"></template>
   </view>
 
   <view class="list">
-    <view class="goods-wrap" wx:if="{{!isLoading}}" wx:key="" wx:for="{{listData.goods}}" bindtap="bindTapCase" data-article-id="{{currentCases[index].articleId}}">
-      <image class="goods-img" src="{{listData.goods[index].pic}}"></image>
+    <view class="goods-wrap" wx:if="{{!isLoading}}" wx:key="" wx:for="{{goodData.goods}}" bindtap="bindTapCase" data-article-id="{{currentCases[index].articleId}}">
+      <image class="goods-img" src="{{goodData.goods[index].pic}}"></image>
       <view class="text">
         <view class="title">
-          <text>{{listData.goods[index].name}}</text>
+          <text>{{goodData.goods[index].name}}</text>
         </view>
         <view class="price">
-          <text class="new">￥{{listData.goods[index].currentPrice}}</text>
-          <text class="old">￥{{listData.goods[index].originalPrice}}</text>
+          <text class="new">￥{{goodData.goods[index].currentPrice}}</text>
+          <text class="old">￥{{goodData.goods[index].originalPrice}}</text>
         </view>
       </view>
     </view>

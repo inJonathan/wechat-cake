@@ -10,37 +10,16 @@ module.exports = {
         {
           "gid": "1",
           "pic": "http://www.xcxkj.tech/images/xnj/t1.jpg",
-          "name": "阿拉斯加烤鸡排套餐阿拉斯加烤鸡排套餐",
+          "name": "阿拉斯加烤鸡排套餐",
           "currentPrice": "23.00",
           "originalPrice": "28.00"
         },
         {
-          "gid": "1",
+          "gid": "2",
           "pic": "http://www.xcxkj.tech/images/xnj/t3.jpg",
           "name": "澳洲肉眼牛排套餐",
           "currentPrice": "28.00",
           "originalPrice": "35.00"
-        },
-        {
-          "gid": "1",
-          "pic": "http://www.xcxkj.tech/images/xnj/t1.jpg",
-          "name": "阿拉斯加烤",
-          "currentPrice": "23.00",
-          "originalPrice": "28.00"
-        },
-        {
-          "gid": "1",
-          "pic": "http://www.xcxkj.tech/images/xnj/t1.jpg",
-          "name": "阿餐",
-          "currentPrice": "23.00",
-          "originalPrice": "28.00"
-        },
-        {
-          "gid": "1",
-          "pic": "http://www.xcxkj.tech/images/xnj/t1.jpg",
-          "name": "阿拉斯加烤鸡排套餐阿拉斯加烤鸡排套餐",
-          "currentPrice": "23.00",
-          "originalPrice": "28.00"
         }
       ]
     },
@@ -50,7 +29,7 @@ module.exports = {
       "recommended": true,
       "goods": [
         {
-          "gid": "2",
+          "gid": "3",
           "pic": "http://www.xcxkj.tech/images/xnj/b3.JPG",
           "name": "薄荷番石榴汁",
           "currentPrice": "12.00",
@@ -60,11 +39,11 @@ module.exports = {
     },
     {
       "name": "小吃",
-      "tid": "3",
+      "tid": "7",
       "recommended": false,
       "goods": [
         {
-          "gid": "3",
+          "gid": "4",
           "pic": "http://www.xcxkj.tech/images/xnj/a1.jpg",
           "name": "鱿鱼须",
           "currentPrice": "23.00",
