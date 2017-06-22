@@ -1,0 +1,9 @@
+<import src="/dist/loadmore/index.wxml" />
+<import src="/dist/tab/index.wxml" />
+<import src="/common/copyright/copyright" />
+
+<view class="container">
+  <view class="tab-wrap" wx:if="{{!isLoading}}">
+    <template is="zan-tab" data="{{tab: orderTab, componentId: 'orderTab'}}"></template>
+  </view>
+</view>

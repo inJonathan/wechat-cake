@@ -13,9 +13,9 @@
 
   <view class="zan-panel">
     <view style="padding: 15px;">
-      <text class="title">阿拉斯加烤鸡排套餐阿拉斯加烤鸡排套餐阿拉斯加烤鸡排套餐</text>
-      <text class="now">￥23.00</text>
-      <text class="old">￥28.00</text>
+      <text class="title">{{goodName}}</text>
+      <text class="now">￥{{now}}</text>
+      <text class="old">￥{{old}}</text>
     </view>
   </view>
 
@@ -23,7 +23,7 @@
     <view class="zan-cell zan-cell--access" bindtap="toggleDialog">
       <view class="select">已选</view>
       <view class="zan-cell__bd">
-        <view class="">2kg</view>
+        <view class="">{{currkind}}</view>
       </view>
       <view class="icon"></view>
     </view>
@@ -44,21 +44,23 @@
       <scroll-view scroll-y="true" class="container-wrap" style="width:100%;max-height:850rpx;">
 
         <view class="zan-icon zan-icon-close" bindtap="toggleDialog"></view>
+
         <view class="dlog_box" style="padding-top:20px;">
-          <image src="http://www.xcxkj.tech/images/xnj/t2.jpg" class="dlog_img" />
+          <image src="{{smpic}}" class="dlog_img" />
           <view class="right">
-            <view class="dlog_price">￥23.00</view>
+            <view class="dlog_price">￥{{now}}</view>
             <view class="dlog_count">
-              <text>库存：</text>100</view>
+              <text>库存：</text>{{total}}</view>
             <view class="dlog_selected">
-              <text>已选：</text>2kg</view>
+              <text>已选：</text>{{currkind}}</view>
           </view>
         </view>
 
         <view class="dlog_box">
           <view class="dlog_title">种类</view>
-          <view class="zan-label zan-label--primary">2kg</view>
-          <view class="zan-label">5kg</view>
+
+          <view class="zan-label {{current == index ? 'zan-label--primary' : ''}}" wx:key="" wx:for="{{kinds}}" bindtap="tapKind" data-current="{{index}}">{{kinds[index].kname}}</view>
+
         </view>
 
         <view class="dlog_box">
@@ -79,4 +81,21 @@
   </view>
 
 
+</view>
+
+<view class="bot-bar">
+  <view class="left-go">
+    <view class="left">
+      <view class="zan-icon zan-icon-store" bindtap="goIndex"></view>
+      <text>店铺</text>
+    </view>
+    <view class="right" style="color:#f44;border-left:1px solid #ebebeb;">
+      <view class="zan-icon zan-icon-shopping-cart"></view>
+      <text>购物车</text>
+    </view>
+  </view>
+  <view class="bot-bar-btn">
+    <view class="left" bindtap="toggleDialog">加入购物车</view>
+    <view class="right" bindtap="toggleDialog">立即购买</view>
+  </view>
 </view>

@@ -1,5 +1,6 @@
 <import src="/dist/loadmore/index.wxml" />
 <import src="/dist/tab/index.wxml" />
+<import src="/common/copyright/copyright" />
 
 <view class="container">
 
@@ -12,7 +13,7 @@
   </view>
 
   <view class="list">
-    <view class="goods-wrap" wx:if="{{!isLoading}}" wx:key="" wx:for="{{goodData.goods}}" bindtap="bindTapCase" data-article-id="{{currentCases[index].articleId}}">
+    <view class="goods-wrap" wx:if="{{!isLoading}}" wx:key="" wx:for="{{goodData.goods}}" bindtap="tapGood" data-gid="{{goodData.goods[index].gid}}">
       <image class="goods-img" src="{{goodData.goods[index].pic}}"></image>
       <view class="text">
         <view class="title">
@@ -25,5 +26,7 @@
       </view>
     </view>
   </view>
+
+  <template is="copyright"/>
 
 </view>

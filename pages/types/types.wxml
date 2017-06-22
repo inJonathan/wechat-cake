@@ -10,7 +10,7 @@
     </view>
   </scroll-view>
 
-  <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" class="container">
+  <view class="container">
 
     <view class="list">
       <view class="goods-wrap" wx:key="" wx:for="{{goodData.goods}}" bindtap="tapGood" data-gid="{{goodData.goods[index].gid}}">
@@ -26,6 +26,7 @@
         </view>
       </view>
     </view>
-    
-  </scroll-view>
+
+  </view>
+
 </view>

@@ -1,0 +1,54 @@
+<import src="/common/copyright/copyright" />
+
+<view class="container">
+
+  <view class="userinfo">
+    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    <view class="nickname">
+      <text>{{userInfo.nickName}}</text>
+    </view>
+  </view>
+
+  <view class="zan-panel">
+    <view class="zan-cell zan-cell--access" bindtap="goOrder">
+      <view class="zan-cell__bd">我的订单</view>
+      <view class="zan-cell__ft">查看全部订单</view>
+    </view>
+  </view>
+
+  <view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd order_icons">
+        <view class="icon" bindtap="goOrder">
+          <i class="iconfont icon-daifukuan"></i>
+          <text>待付款</text>
+        </view>
+        <view class="icon" bindtap="goOrder">
+          <i class="iconfont icon-daifahuo"></i>
+          <text>待发货</text>
+        </view>
+        <view class="icon" bindtap="goOrder">
+          <i class="iconfont icon-dengdai"></i>
+          <text>待收货</text>
+        </view>
+        <view class="icon" bindtap="goOrder">
+          <i class="iconfont icon-yiwancheng"></i>
+          <text>已完成</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="zan-panel">
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__bd order_item">
+        <text>购物车</text>
+      </view>
+      <view class="zan-cell__ft"></view>
+    </view>
+  </view>
+
+  <template is="copyright"/>
+
+
+</view>

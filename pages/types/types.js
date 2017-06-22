@@ -42,7 +42,6 @@ Page({
     this.setGoodList(event.currentTarget.dataset.current);
   },
   tapGood(event) {
-    console.log(event.currentTarget.dataset.gid)
     wx.navigateTo({
       url: '../detail/detail?gid=${event.currentTarget.dataset.gid}'
     });

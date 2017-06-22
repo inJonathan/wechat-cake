@@ -54,5 +54,10 @@ Page(Object.assign({}, Zan.Tab, {
     this.setData({
       [`${componentId}.selectedId`]: selectedId
     });
+  },
+  tapGood(event) {
+    wx.navigateTo({
+      url: '../detail/detail?gid=${event.currentTarget.dataset.gid}'
+    });
   }
 }));

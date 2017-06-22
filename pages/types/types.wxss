@@ -1,6 +1,9 @@
 .types {
+  z-index: 1;
   width: 25%;
-  float: left;
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: #f0f0f0;
 }
 

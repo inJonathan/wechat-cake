@@ -1,4 +1,5 @@
 @import "dist/index.wxss";
+@import "common/index.wxss";
 
 view, scroll-view {
     -webkit-box-sizing: border-box;

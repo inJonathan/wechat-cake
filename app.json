@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/detail/detail",
     "example/dashboard/index",
+    "pages/order/order",
     "pages/types/types",
+    "pages/mine/mine",
     "example/btn/index",
     "example/badge/index",
     "example/cell/index",
@@ -48,7 +50,7 @@
         "selectedIconPath": "images/type-active.png"
       },
       {
-        "pagePath": "example/dashboard/index",
+        "pagePath": "pages/mine/mine",
         "text": "我的",
         "iconPath": "images/mine.png",
         "selectedIconPath": "images/mine-active.png"

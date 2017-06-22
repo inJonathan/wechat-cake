@@ -1,7 +1,11 @@
 @import "../../wxParse/wxParse.wxss";
 
+.container {
+  padding-bottom: 50px;
+}
+
 swiper {
-  height: 750rpx;
+  height: 700rpx;
 }
 
 .slide-image {
@@ -67,7 +71,6 @@ swiper {
 
 .container-wrap {
   position: relative;
-  padding: 0 15px;
 }
 
 .dlog_btn {
@@ -84,12 +87,13 @@ swiper {
   right: 0;
   top: 0;
   font-size: 20px;
-  padding: 8px 10px;
+  padding: 5px 5px;
 }
 
 .dlog_box {
-  width: 100%;
+  width: 90%;
   padding: 10px 0;
+  margin: 0 auto;
   border-bottom: 1px solid #e5e5e5;
 }
 
@@ -129,4 +133,70 @@ swiper {
 .zan-quantity--small {
   float: right;
   margin-top: -20px;
+}
+
+.bot-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  border-top: 1rpx solid #fff;
+}
+
+.left-go {
+  float: left;
+  width: 25%;
+  height: 100%;
+}
+
+.bot-bar-btn {
+  float: right;
+  width: 75%;
+  height: 100%;
+  background-color: #ccc;
+}
+
+.bot-bar-btn .left,.bot-bar-btn .right {
+  float: left;
+  width: 50%;
+  height: 100%;
+  line-height: 50px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  overflow: hidden;
+}
+
+.bot-bar-btn .left {
+  background-color: #fd9c1e;
+}
+
+.bot-bar-btn .right {
+  background-color: #f44;
+}
+
+.left-go > view {
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.left-go > view text {
+  position: absolute;
+  width: 100%;
+  bottom: 3px;
+  left: 0;
+  color: #333;
+  text-align: center;
+}
+
+.left-go .zan-icon {
+  width: 100%;
+  height: 100%;
+  line-height: 35px;
+  font-size: 18px;
+  text-align: center;
 }
