@@ -1,2 +1,3 @@
 @import "common.wxss";
+@import "weui.wxss";
 @import "copyright/copyright.wxss";

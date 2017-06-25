@@ -4,6 +4,25 @@
 
 <view class="container">
 
+<view class="weui-cells weui-cells_after-title">
+            <checkbox-group bindchange="checkboxChange">
+                <label class="weui-cell weui-check__label">
+                    <checkbox class="weui-check" value="123123" checked="true"/>
+
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                        <icon class="weui-icon-checkbox_circle" type="circle" size="23"></icon>
+                        <icon class="weui-icon-checkbox_success" type="success" size="23"></icon>
+                    </view>
+                    <view class="weui-cell__bd">{{item.name}}</view>
+                </label>
+            </checkbox-group>
+            <view class="weui-cell weui-cell_link">
+                <view class="weui-cell__bd">添加更多</view>
+            </view>
+        </view>
+
+
+
   <image class="banner" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497935468391&di=9bb7eeebdd18eb3379f67d9e0f811bf2&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F015a645798da570000018c1bbb9eab.jpg"></image>
 
   <template is="zan-loadmore" data="{{loading: isLoading}}" />
