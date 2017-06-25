@@ -1,5 +1,6 @@
 <import src="../../wxParse/wxParse.wxml" />
 <import src="../../dist/quantity/index.wxml" />
+<import src="/dist/toptips/index.wxml" />
 
 <view class="container">
 
@@ -73,7 +74,8 @@
       </scroll-view>
 
       <view class="dlog_btn">
-        <button class="zan-btn zan-btn--large zan-btn--danger">立即购买</button>
+        <button hidden="{{!goOrder}}" class="zan-btn zan-btn--large zan-btn--danger">立即购买</button>
+        <button hidden="{{goOrder}}" class="zan-btn zan-btn--large cartbtn" bindtap="showTopTips">加入购物车</button>
       </view>
 
     </view>
@@ -89,13 +91,16 @@
       <view class="zan-icon zan-icon-store" bindtap="goIndex"></view>
       <text>店铺</text>
     </view>
-    <view class="right" style="color:#f44;border-left:1px solid #ebebeb;">
+    <view class="right" style="color:#f44;border-left:1px solid #ebebeb;" bindtap="goCart">
+      <view class="my-badge">9</view>
       <view class="zan-icon zan-icon-shopping-cart"></view>
       <text>购物车</text>
     </view>
   </view>
   <view class="bot-bar-btn">
-    <view class="left" bindtap="toggleDialog">加入购物车</view>
+    <view class="left" bindtap="toggleDialog" data-gowhere="cart">加入购物车</view>
     <view class="right" bindtap="toggleDialog">立即购买</view>
   </view>
 </view>
+
+<template is="zan-toptips" data="{{ zanTopTips }}"></template>

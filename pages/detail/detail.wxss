@@ -81,6 +81,11 @@ swiper {
   background-color: #fff;
 }
 
+.cartbtn {
+  color: #fff;
+  background-color: #fd9c1e;
+}
+
 .zan-icon-close {
   z-index: 1;
   position: absolute;
@@ -199,4 +204,9 @@ swiper {
   line-height: 35px;
   font-size: 18px;
   text-align: center;
+}
+
+.my-badge {
+  top: 2px;
+  right: 2px;
 }

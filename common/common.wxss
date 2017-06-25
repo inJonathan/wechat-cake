@@ -1,0 +1,19 @@
+.my-badge {
+  z-index: 1;
+  position: absolute;
+  background-color: #f44;
+  color: #fff;
+  border-radius:.8em;
+  top: 0;
+  right: 0;
+  font-size: 10px;
+  font-family: tahoma;
+  height: 1.6em;
+  min-width: 1.6em;
+  line-height: 1.6;
+  padding: 0 0.4em;
+  text-align:center;
+white-space:nowrap;
+box-shadow:0 0 0 1px #fff;
+
+}

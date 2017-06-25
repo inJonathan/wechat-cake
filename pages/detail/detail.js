@@ -2,7 +2,7 @@ var Zan = require('../../dist/index');
 var WxParse = require('../../wxParse/wxParse.js');
 var GoodData = require('../../GoodData.js');
 
-Page(Object.assign({}, Zan.Quantity, {
+Page(Object.assign({}, Zan.Quantity, Zan.TopTips, {
   data: {
     imgUrls: [],
     goodName: "加载中...",
@@ -19,12 +19,32 @@ Page(Object.assign({}, Zan.Quantity, {
     interval: 5000,
     duration: 1000,
     showDialog: false,
-    quantity: {}
+    quantity: {},
+    goOrder: true
   },
-  toggleDialog() {
+  toggleDialog(e) {
+    let gowhere;
+    if (e) {
+      gowhere = e.currentTarget.dataset.gowhere;
+    }
+    if (gowhere && gowhere == 'cart') {
+      this.setData({
+        goOrder: false
+      });
+    } else {
+      setTimeout(() => {
+        this.setData({
+          goOrder: true
+        });
+      }, 300)
+    }
     this.setData({
       showDialog: !this.data.showDialog
     });
+  },
+  showTopTips() {
+    this.showZanTopTips('加入购物城成功');
+    this.toggleDialog();
   },
   onLoad() {
     this.setData({
@@ -45,7 +65,6 @@ Page(Object.assign({}, Zan.Quantity, {
     var article = GoodData.detail;
     var that = this;
     WxParse.wxParse('article', 'html', article, that);
-
   },
   handleZanQuantityChange(e) {
     var componentId = e.componentId;
@@ -72,5 +91,10 @@ Page(Object.assign({}, Zan.Quantity, {
     wx.switchTab({
       url: '../index/index'
     });
+  },
+  goCart() {
+    wx.navigateTo({
+      url: '../cart/cart',
+    })
   }
 }));

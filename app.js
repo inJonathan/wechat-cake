@@ -2,8 +2,6 @@
 App({
   globalData: {
   },
-  onLaunch: function () {
-  },
   getUserInfo: function (cb) {
     var that = this
     if (this.globalData.userInfo) {
