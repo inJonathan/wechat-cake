@@ -40,15 +40,15 @@
   </view>
 
   <view class="zan-panel">
-    <view class="zan-cell zan-cell--access">
+    <view class="zan-cell zan-cell--access" bindtap="goCart">
       <view class="zan-cell__bd order_item">
         <text>购物车</text>
+        <view class="my-badge">9</view>
       </view>
       <view class="zan-cell__ft"></view>
     </view>
   </view>
 
   <template is="copyright"/>
-
 
 </view>

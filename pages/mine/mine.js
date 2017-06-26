@@ -18,5 +18,10 @@ Page({
     wx.navigateTo({
       url: '../order/order'
     });
+  },
+  goCart() {
+    wx.navigateTo({
+      url: '../cart/cart',
+    })
   }
 })

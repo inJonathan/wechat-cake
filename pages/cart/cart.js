@@ -37,7 +37,7 @@ Page({
     });
   },
   checkAll(e) { // 处理全选按钮
-    let checkboxItems = this.data.checkboxItems
+    let checkboxItems = this.data.checkboxItems;
     if (e.detail.value == 'checkAll') {
       for (let i in checkboxItems) {
         checkboxItems[i].checked = true;
@@ -53,5 +53,9 @@ Page({
         });
       }
     }
+    let checkAll = this.data.checkAll;
+    this.setData({
+      checkAll: !checkAll
+    });
   }
 })

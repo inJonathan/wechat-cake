@@ -72,3 +72,13 @@
   color: #666;
   text-align: center;
 }
+
+.order_item {
+  position: relative;
+}
+
+.my-badge {
+  top: 0;
+  right: 0;
+  font-size: 10px !important;
+}

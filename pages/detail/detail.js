@@ -48,7 +48,7 @@ Page(Object.assign({}, Zan.Quantity, Zan.TopTips, {
   },
   onLoad() {
     this.setData({
-      imgUrls: GoodData.pic,
+      imgUrls: GoodData.pics,
       goodName: GoodData.name,
       now: GoodData.currentPrice,
       old: GoodData.originalPrice,

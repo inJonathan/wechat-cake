@@ -7,6 +7,17 @@
   color: #f44;
 }
 
+.my-checkall {
+  display: inline-block;
+  height: 28px;
+  line-height: 28px;
+  margin-left: 4.6px;
+  margin-right: 4.6px;
+  font-size: 28px;
+  vertical-align: middle;
+  color: #f44;
+}
+
 .good-item {
   padding-left: 5px;
 }

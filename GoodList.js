@@ -9,14 +9,14 @@ module.exports = {
       "goods": [
         {
           "gid": "1",
-          "pic": "http://www.xcxkj.tech/images/xnj/t1.jpg",
+          "pic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1498458295682&di=356edb6262b682278163aa75496dc24b&imgtype=0&src=http%3A%2F%2Fwww.ln139.com%2Fm2%2Fshlm%2Fupload%2Ffck%2F20150123%2F0fc0365f-7611-4d7c-aa6c-9a92d44635ed.jpg",
           "name": "阿拉斯加烤鸡排套餐",
           "currentPrice": "23.00",
           "originalPrice": "28.00"
         },
         {
           "gid": "2",
-          "pic": "http://www.xcxkj.tech/images/xnj/t3.jpg",
+          "pic": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1498458532978&di=70c989f1ff35d0cb0a0fb2883f4d71c6&imgtype=0&src=http%3A%2F%2Fimg.juimg.com%2Ftuku%2Fyulantu%2F140106%2F328226-14010619240768.jpg",
           "name": "澳洲肉眼牛排套餐",
           "currentPrice": "28.00",
           "originalPrice": "35.00"

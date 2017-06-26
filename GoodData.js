@@ -3,10 +3,10 @@ module.exports = {
   "code": "00000",
   "gid": "1",
   "name": "阿拉斯加烤鸡排套餐",
-  "pic": [
-    "http://www.xcxkj.tech/images/xnj/t1.jpg",
-    "http://www.xcxkj.tech/images/xnj/t1.jpg",
-    "http://www.xcxkj.tech/images/xnj/t1.jpg"
+  "pics": [
+    "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3658921046,246826443&fm=26&gp=0.jpg",
+    "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1498458295685&di=c07e055626bb2ac4b80d7562f1d2bcd7&imgtype=0&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Flbc%2Fpic%2Fitem%2F5ab5c9ea15ce36d31bbc3cd73bf33a87e850b199.jpg",
+    "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1498458295682&di=356edb6262b682278163aa75496dc24b&imgtype=0&src=http%3A%2F%2Fwww.ln139.com%2Fm2%2Fshlm%2Fupload%2Ffck%2F20150123%2F0fc0365f-7611-4d7c-aa6c-9a92d44635ed.jpg"
   ],
   "currentPrice": "23.00",
   "originalPrice": "28.00",

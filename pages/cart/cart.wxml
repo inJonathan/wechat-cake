@@ -1,15 +1,16 @@
 <view class="container">
 
-  <view class="weui-cell" style="background-color:#fff;">
+  <view class="weui-cell" style="background-color:#fff;padding-left:5px;">
     <view class="weui-cell__hd">
-    
-
-
-      <checkbox-group bindchange="checkAll">
-          <checkbox value="checkAll" checked="{{checkAll}}" />
+      <checkbox-group bindchange="checkAll" class="check-all">
+        <label>
+          <checkbox value="checkAll" checked="{{checkAll}}" style="position:absolute;left:-9999px;" />
+          <view class="weui-cell__hd weui-check__hd_in-checkbox">
+            <icon class="weui-icon-checkbox_circle" type="circle" size="28" hidden="{{checkAll}}"></icon>
+            <icon class="my-checkall iconfont icon-check" hidden="{{!checkAll}}"></icon>
+          </view>
+        </label>
       </checkbox-group>
-
-
       <text>寿司的屋</text>
     </view>
   </view>
@@ -17,7 +18,7 @@
   <view class="weui-cells weui-cells_after-title">
     <checkbox-group bindchange="checkboxChange">
       <view class="good-item weui-cell" wx:for="{{checkboxItems}}" wx:key="value">
-        <label class="weui-check__label">
+        <label>
           <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
           <view class="weui-cell__hd weui-check__hd_in-checkbox">
             <icon class="weui-icon-checkbox_circle" type="circle" size="28" hidden="{{item.checked}}"></icon>
