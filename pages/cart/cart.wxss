@@ -1,1 +1,23 @@
-/* cart.wxss */
+.my-check {
+  display: inline-block;
+  margin-left: 4.6px;
+  margin-right: 4.6px;
+  font-size: 28px;
+  vertical-align: middle;
+  color: #f44;
+}
+
+.good-item {
+  padding-left: 5px;
+}
+
+.good-img {
+  float: left;
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 10px;
+}
+
+.check-all {
+  float: left;
+}

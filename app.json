@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/cart/cart",
-    "pages/detail/detail",
     "example/dashboard/index",
+    "pages/index/index",
+    "pages/detail/detail",
     "pages/order/order",
     "pages/types/types",
     "pages/mine/mine",

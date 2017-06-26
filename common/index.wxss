@@ -1,3 +1,4 @@
 @import "common.wxss";
 @import "weui.wxss";
+@import "fonticon.wxss";
 @import "copyright/copyright.wxss";

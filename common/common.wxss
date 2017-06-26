@@ -1,9 +1,47 @@
+/*----元素样式----*/
+
+view, scroll-view {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+view, text {
+  font-size: 12px;
+}
+
+.container {
+  background: #f9f9f9;
+  overflow: hidden;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.container::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  content: ' ';
+  width: 100%;
+  height: 1rpx;
+  background-color: #e2e2e2;
+  z-index: 5;
+}
+
+.doc-title {
+  font-size: 25px;
+  line-height: 25px;
+  color: #666;
+  padding: 15px 0;
+  margin: 20px 15px;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
 .my-badge {
   z-index: 1;
   position: absolute;
   background-color: #f44;
   color: #fff;
-  border-radius:.8em;
+  border-radius: 0.8em;
   top: 0;
   right: 0;
   font-size: 10px;
@@ -12,8 +50,7 @@
   min-width: 1.6em;
   line-height: 1.6;
   padding: 0 0.4em;
-  text-align:center;
-white-space:nowrap;
-box-shadow:0 0 0 1px #fff;
-
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 0 0 0 1px #fff;
 }
