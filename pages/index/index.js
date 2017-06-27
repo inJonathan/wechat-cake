@@ -1,5 +1,5 @@
 var Zan = require('../../dist/index');
-var GoodList = require('../../GoodList.js');
+var GoodList = {};
 
 Page(Object.assign({}, Zan.Tab, {
   data: {
@@ -8,15 +8,23 @@ Page(Object.assign({}, Zan.Tab, {
     goodData: {}
   },
   onLoad: function () {
-
-    // 模拟请求
-    setTimeout(() => {
-      this.setData({
-        isLoading: false
-      });
-    }, 500);
-
-    // 初始化tab
+    let _this = this;
+    wx.request({
+      url: 'https://xcxkj.tech/xcxi/weixin/goods/goodlist',
+      data: {},
+      success: function (res) {
+        setTimeout(() => {
+          _this.setData({
+            isLoading: false
+          });
+        }, 300);
+        GoodList = res.data;
+        _this.initData();
+      }
+    })
+  },
+  initData() {
+    let orderArr = [];
     let types = [];
     for (let i in GoodList.type) {
       let typeItem = {};
@@ -24,19 +32,24 @@ Page(Object.assign({}, Zan.Tab, {
         typeItem.id = GoodList.type[i].tid;
         typeItem.title = GoodList.type[i].name;
         types.push(typeItem);
+        orderArr.push(GoodList.type[i].tid);
       }
     }
+    
+    // 拿到最大的ID设为初始化分类
+    let orderId = Math.max(...orderArr);
+
+    // 初始化tab
     this.setData({
       indexTab: {
         list: types,
-        selectedId: 1,
+        selectedId: orderId,
         scroll: false
       }
     });
 
     // 初始化商品列表
-    this.setGoodList(1);
-
+    this.setGoodList(orderId);
   },
   setGoodList(typ) {
     for (let i in GoodList.type) {

@@ -58,7 +58,7 @@
         </view>
 
         <view class="dlog_box">
-          <view class="dlog_title">种类</view>
+          <view class="dlog_title">规格</view>
 
           <view class="zan-label {{current == index ? 'zan-label--primary' : ''}}" wx:key="" wx:for="{{kinds}}" bindtap="tapKind" data-current="{{index}}">{{kinds[index].kname}}</view>
 

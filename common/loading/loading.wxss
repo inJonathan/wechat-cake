@@ -1,0 +1,23 @@
+.my-loading-wrap {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-loading {
+  width: 50rpx;
+  height: 50rpx;
+  animation: circle 0.8s infinite linear;
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}

@@ -1,21 +1,27 @@
-var GoodList = require('../../GoodList.js');
+// var GoodList = require('../../GoodList.js');
+var GoodList = {};
 
 Page({
   data: {
     isLoading: true,
-    current: 1,
     typeData: {},
     goodData: {}
   },
   onLoad() {
-
-    // 模拟请求
-    setTimeout(() => {
-      this.setData({
-        isLoading: false
-      });
-    }, 500);
-
+    let _this = this;
+    wx.request({
+      url: 'https://xcxkj.tech/xcxi/weixin/goods/goodlist',
+      data: {},
+      success: function (res) {
+        setTimeout(() => {
+          _this.setData({
+            isLoading: false
+          });
+        }, 300);
+        GoodList = res.data;
+        _this.initData();
+      }
+    })
     // 初始化scroll-view高度
     var that = this;
     wx.getSystemInfo({
@@ -26,14 +32,24 @@ Page({
       }
     });
 
-    // 初始化商品列表
+  },
+  initData() {
+    let orderArr = [];
+    let types = [];
+    for (let i in GoodList.type) {
+        orderArr.push(GoodList.type[i].tid);
+    }
+
+    // 拿到最大的ID设为初始化分类
+    let orderId = Math.max(...orderArr);
+
     this.setData({
+      current: orderId,
       typeData: GoodList.type
     });
 
     // 初始化商品列表
-    this.setGoodList(1);
-
+    this.setGoodList(orderId);
   },
   tapTpye(event) {
     this.setData({

@@ -1,11 +1,18 @@
-// cart.js
-Page({
+var Zan = require('../../dist/index');
+
+Page(Object.assign({}, Zan.Quantity, {
   data: {
     checkboxItems: [
       { name: 'standard is dealt for u.', value: '0', checked: true },
       { name: 'standard is dealicient for u.', value: '1', checked: false }
     ],
-    checkAll: false
+    checkAll: false,
+    isEdit: false,
+    test: {
+      quantity: 1,
+      min: 1,
+      max: 20
+    }
   },
   checkboxChange: function (e) {
 
@@ -57,5 +64,23 @@ Page({
     this.setData({
       checkAll: !checkAll
     });
+  },
+  goIndex() {
+    wx.switchTab({
+      url: '../index/index'
+    });
+  },
+  toggleEdit() {
+    let isEdit = this.data.isEdit;
+    this.setData({
+      isEdit: !isEdit
+    });
+  },
+  handleZanQuantityChange(e) {
+    var componentId = e.componentId;
+    var quantity = e.quantity;
+    this.setData({
+      [`${componentId}.quantity`]: quantity
+    });
   }
-})
+}))

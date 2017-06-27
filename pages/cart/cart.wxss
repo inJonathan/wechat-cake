@@ -1,3 +1,7 @@
+.container {
+  padding-bottom: 65px;
+}
+
 .my-check {
   display: inline-block;
   margin-left: 4.6px;
@@ -18,6 +22,10 @@
   color: #f44;
 }
 
+.good-info {
+  min-height: 75px;
+}
+
 .good-item {
   padding-left: 5px;
 }
@@ -31,4 +39,72 @@
 
 .check-all {
   float: left;
+}
+
+.top-title {
+  max-width: 60%;
+  float: left;
+  line-height: 30px;
+  font-size: 14px;
+}
+
+.good-bot {
+  width: 100%;
+}
+
+.good-bot > view {
+  display: inline-block;
+}
+
+.good-bot .price {
+  font-size: 14px;
+  color: #f44;
+}
+
+.good-bot .count {
+  font-size: 14px;
+  float: right;
+  color: #999;
+}
+
+.cart-bot {
+  z-index: 9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  border-top: 1px solid #ededed;
+  background-color: #fff;
+}
+
+.cart-bot .total {
+  padding-left: 15px;
+  font-size: 14px;
+}
+
+.cart-bot .clearing {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  background-color: #f44;
+}
+
+.zan-quantity {
+  float: left;
+}
+
+.del-btn {
+  float: right;
+  font-size: 12px;
+  width: 120rpx;
+  padding: 0 5px;
+  background: #f44;
+  color: #fff;
 }

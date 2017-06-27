@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/cart/cart",
-    "pages/mine/mine",
     "pages/index/index",
+    "pages/types/types",
+    "pages/mine/mine",
+    "pages/cart/cart",
     "example/dashboard/index",
     "pages/detail/detail",
     "pages/order/order",
-    "pages/types/types",
     "example/btn/index",
     "example/badge/index",
     "example/cell/index",

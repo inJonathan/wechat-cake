@@ -1,0 +1,5 @@
+<template name="loading">
+  <view class="my-loading-wrap">
+    <image class="my-loading" src="../../images/loading.png"></image>
+  </view>
+</template>
