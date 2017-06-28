@@ -1,21 +1,21 @@
+var app = getApp();
 var Zan = require('../../dist/index');
+var GoodList = {};
 
 Page(Object.assign({}, Zan.Quantity, {
   data: {
-    checkboxItems: [
-      { name: 'standard is dealt for u.', value: '0', checked: true },
-      { name: 'standard is dealicient for u.', value: '1', checked: false }
-    ],
-    checkAll: false,
+    empty: false,
+    isLoading: true,
+    checkboxItems: [],
+    checkAll: true,
     isEdit: false,
-    test: {
-      quantity: 1,
-      min: 1,
-      max: 20
-    }
+    total: '0.00',
+    unable: ''
+  },
+  onLoad() {
+    this.upDateList();
   },
   checkboxChange: function (e) {
-
     // 子项影响全选
     let allItems = this.data.checkboxItems.length;
     if (e.detail.value.length == allItems) {
@@ -24,10 +24,9 @@ Page(Object.assign({}, Zan.Quantity, {
       });
     } else {
       this.setData({
-        checkAll: false
+        checkAll: false,
       });
     }
-
     // 处理选择一项
     var checkboxItems = this.data.checkboxItems, values = e.detail.value;
     for (var i = 0, lenI = checkboxItems.length; i < lenI; ++i) {
@@ -42,6 +41,8 @@ Page(Object.assign({}, Zan.Quantity, {
     this.setData({
       checkboxItems: checkboxItems
     });
+    // console.log('checkbox发生change事件，携带value值为：', e.detail.value)
+    this.upDateTotal()
   },
   checkAll(e) { // 处理全选按钮
     let checkboxItems = this.data.checkboxItems;
@@ -64,6 +65,8 @@ Page(Object.assign({}, Zan.Quantity, {
     this.setData({
       checkAll: !checkAll
     });
+    // console.log('checkbox发生change事件，携带value值为：', e.detail.value)
+    this.upDateTotal();
   },
   goIndex() {
     wx.switchTab({
@@ -77,10 +80,114 @@ Page(Object.assign({}, Zan.Quantity, {
     });
   },
   handleZanQuantityChange(e) {
-    var componentId = e.componentId;
-    var quantity = e.quantity;
+    let componentId = e.componentId;
+    let quantity = e.quantity;
+    let checkboxItems = this.data.checkboxItems;
     this.setData({
       [`${componentId}.quantity`]: quantity
     });
+    checkboxItems.forEach((item, index) => {
+      if (index == componentId.replace(/[^0-9]/ig, "")) {
+        item.count = quantity;
+      }
+    });
+    this.setData({
+      checkboxItems: checkboxItems
+    });
+    this.upDateTotal();
+  },
+  upDateList() {
+    let _this = this;
+    let selectGoods = app.globalData.selectGoods;
+    let goodArr = [];
+
+    // 判断购物车为空
+    if (selectGoods.length == 0) {
+      _this.setData({
+        empty: true
+      });
+      return;
+    }
+
+    wx.request({
+      url: 'https://xcxkj.tech/xcxi/weixin/goods/goodlist',
+      data: {},
+      success: function (res) {
+        GoodList = res.data;
+        setTimeout(() => {
+          // 遍历出所有商品，获得对应id的商品信息
+          GoodList.type.forEach((i) => {
+            i.goods.forEach((j) => {
+              selectGoods.forEach((k, index) => {
+                if (j.gid == k.gid) {
+                  let goodItem = {
+                    gid: j.gid,
+                    pic: j.pic,
+                    name: j.name,
+                    kindName: "规格1",
+                    price: j.currentPrice,
+                    value: j.gid,
+                    checked: true,
+                    count: k.count,
+                    quantity: {
+                      quantity: 1,
+                      min: 1,
+                      max: 20
+                    }
+                  }
+                  goodArr.push(goodItem);
+                }
+              })
+            })
+          });
+          _this.setData({
+            checkboxItems: goodArr,
+            isLoading: false
+          });
+          _this.upDateTotal();
+        }, 300);
+      }
+    });
+  },
+  upDateTotal() { // 更新总价
+    let totalPrice = 0;
+    let checkboxItems = this.data.checkboxItems;
+    let allItems = this.data.checkboxItems.length;
+    let arr = [];
+    checkboxItems.forEach((i) => {
+      if (i.checked == true) {
+        totalPrice += parseFloat(i.price) * i.count;
+        this.setData({
+          total: totalPrice.toFixed(2)
+        });
+        arr.push(i)
+      }
+    });
+    if (arr.length == 0) { // 如果全不选总价为0
+      this.setData({
+        total: '0.00'
+      });
+    }
+  },
+  delGood(e) { // 删除商品
+    wx.showToast({
+      title: '删除中',
+      icon: 'loading',
+      duration: 500
+    });
+
+    let delId = e.currentTarget.dataset.gid;
+    let selectGoods = app.globalData.selectGoods;
+    let arr = [];
+    selectGoods.forEach((i) => {
+      if (delId != i.gid) {
+        arr.push(i);
+      }
+    })
+    app.globalData.selectGoods = arr;
+    this.upDateList();
+  },
+  goConfirm() {
+    console.log(this.data.checkboxItems)
   }
-}))
+}));

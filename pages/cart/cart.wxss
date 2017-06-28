@@ -96,6 +96,10 @@
   background-color: #f44;
 }
 
+.cart-bot .clearing.unable {
+  background-color: #999;
+}
+
 .zan-quantity {
   float: left;
 }

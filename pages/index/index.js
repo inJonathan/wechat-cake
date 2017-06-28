@@ -70,7 +70,7 @@ Page(Object.assign({}, Zan.Tab, {
   },
   tapGood(event) {
     wx.navigateTo({
-      url: '../detail/detail?gid=${event.currentTarget.dataset.gid}'
+      url: '../detail/detail?gid=' + event.currentTarget.dataset.gid
     });
   }
 }));

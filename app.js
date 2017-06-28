@@ -1,6 +1,6 @@
-
 App({
   globalData: {
+    selectGoods: []
   },
   getUserInfo: function (cb) {
     var that = this

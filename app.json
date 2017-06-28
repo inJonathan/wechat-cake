@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/types/types",
-    "pages/mine/mine",
+    "pages/detail/detail",
     "pages/cart/cart",
     "example/dashboard/index",
-    "pages/detail/detail",
+    "pages/types/types",
+    "pages/mine/mine",
     "pages/order/order",
     "example/btn/index",
     "example/badge/index",
