@@ -17,6 +17,7 @@ Page(Object.assign({}, Zan.Quantity, Zan.TopTips, {
     current: 0,
     total: 0,
     count: 1,
+    cartGoodCount: 0,
     smpic: "",
     indicatorDots: true,
     autoplay: true,
@@ -48,19 +49,35 @@ Page(Object.assign({}, Zan.Quantity, Zan.TopTips, {
   },
   addToCart() { // 加入购物车
     let flag = true;
+    let num = 0;
     if (app.globalData.selectGoods.length > 0) {
       app.globalData.selectGoods.forEach((item, index) => {
         if (item.gid == GoodData.gid) {
+          num = app.globalData.selectGoods[index].count;
           app.globalData.selectGoods.splice(index, 1); // 删除重复数据
+          flag = false;
         }
       })
     }
-    app.globalData.selectGoods.push({
-      "gid": GoodData.gid,
-      "kid": this.data.kid,
-      "count": this.data.count,
-      "checked": true
-    });
+
+    if (flag) {
+      app.globalData.selectGoods.push({
+        "gid": GoodData.gid,
+        "kid": this.data.kid,
+        "count": this.data.count,
+        "checked": true
+      });
+    } else {
+      app.globalData.selectGoods.push({
+        "gid": GoodData.gid,
+        "kid": this.data.kid,
+        "count": this.data.count + num,
+        "checked": true
+      });
+      flag = true;
+    }
+
+    this.upDateCount();
 
     this.showZanTopTips('加入购物城成功');
     this.toggleDialog();
@@ -75,6 +92,9 @@ Page(Object.assign({}, Zan.Quantity, Zan.TopTips, {
         _this.initData();
       }
     });
+  },
+  onShow() {
+    this.upDateCount();
   },
   handleZanQuantityChange(e) {
     var componentId = e.componentId;
@@ -128,5 +148,14 @@ Page(Object.assign({}, Zan.Quantity, Zan.TopTips, {
     var article = GoodData.detail;
     var that = this;
     WxParse.wxParse('article', 'html', article, that);
+  },
+  upDateCount() {
+    let count = 0;
+    app.globalData.selectGoods.forEach((item, index) => {
+      count += item.count;
+    });
+    this.setData({
+      cartGoodCount: count
+    })
   }
 }));
