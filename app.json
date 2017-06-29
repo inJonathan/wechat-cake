@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/detail/detail",
     "pages/cart/cart",
+    "pages/detail/detail",
     "example/dashboard/index",
     "pages/types/types",
     "pages/mine/mine",

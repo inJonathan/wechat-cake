@@ -1,13 +1,14 @@
-const App = getApp();
+var app = getApp();
 
 Page({
   data: {
-    userInfo: {}
+    userInfo: {},
+    cartGoodCount: 0,
   },
   onLoad() {
     let _this = this;
     //调用应用实例的方法获取全局数据
-    App.getUserInfo(function (userInfo) {
+    app.getUserInfo(function (userInfo) {
       //更新数据
       _this.setData({
         userInfo: userInfo
@@ -22,6 +23,18 @@ Page({
   goCart() {
     wx.navigateTo({
       url: '../cart/cart',
+    })
+  },
+  onShow() {
+    this.upDateCount();
+  },
+  upDateCount() {
+    let count = 0;
+    app.globalData.selectGoods.forEach((item, index) => {
+      count += item.count;
+    });
+    this.setData({
+      cartGoodCount: count
     })
   }
 })

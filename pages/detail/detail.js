@@ -78,7 +78,6 @@ Page(Object.assign({}, Zan.Quantity, Zan.TopTips, {
     }
 
     this.upDateCount();
-
     this.showZanTopTips('加入购物城成功');
     this.toggleDialog();
   },

@@ -1,5 +1,6 @@
 var Zan = require('../../dist/index');
 var GoodList = {};
+var app = getApp();
 
 Page(Object.assign({}, Zan.Tab, {
   data: {
@@ -22,6 +23,8 @@ Page(Object.assign({}, Zan.Tab, {
         _this.initData();
       }
     })
+
+    app.getStorageCart();
   },
   initData() {
     let orderArr = [];

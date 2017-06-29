@@ -83,12 +83,18 @@ Page(Object.assign({}, Zan.Quantity, {
     let componentId = e.componentId;
     let quantity = e.quantity;
     let checkboxItems = this.data.checkboxItems;
+    let selectGoods = app.globalData.selectGoods;
     this.setData({
       [`${componentId}.quantity`]: quantity
     });
-    checkboxItems.forEach((item, index) => {
-      if (index == componentId.replace(/[^0-9]/ig, "")) {
-        item.count = quantity;
+    checkboxItems.forEach((i, j) => {
+      if (j == componentId.replace(/[^0-9]/ig, "")) {
+        i.count = quantity;
+        selectGoods.forEach((k, o)=>{
+          if (o == componentId.replace(/[^0-9]/ig, "")) {
+            app.globalData.selectGoods[o] = i;
+          }
+        })
       }
     });
     this.setData({
@@ -130,9 +136,9 @@ Page(Object.assign({}, Zan.Quantity, {
                     checked: true,
                     count: k.count,
                     quantity: {
-                      quantity: 1,
+                      quantity: k.count,
                       min: 1,
-                      max: 20
+                      max: k.stock
                     }
                   }
                   goodArr.push(goodItem);
