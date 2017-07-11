@@ -1,7 +1,7 @@
 <template name="copyright">
   <view class="copyright">
     <!--<image class="copyright_logo" src="../../images/logo-icon.png"></image>-->
-    <text>技术支持 @八九零信息科技</text>
+    <text>技术支持 @Jonathan</text>
   </view>
 </template>
 

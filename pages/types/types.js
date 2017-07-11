@@ -1,5 +1,5 @@
-// var GoodList = require('../../GoodList.js');
 var GoodList = {};
+var goodlistdata = require('../../GoodList.js');
 
 Page({
   data: {
@@ -9,19 +9,29 @@ Page({
   },
   onLoad() {
     let _this = this;
-    wx.request({
-      url: 'https://xcxkj.tech/xcxi/weixin/goods/goodlist',
-      data: {},
-      success: function (res) {
-        setTimeout(() => {
-          _this.setData({
-            isLoading: false
-          });
-        }, 300);
-        GoodList = res.data;
-        _this.initData();
-      }
-    })
+    // wx.request({
+    //   url: 'https://xcxkj.tech/xcxi/weixin/goods/goodlist',
+    //   data: {},
+    //   success: function (res) {
+    //     setTimeout(() => {
+    //       _this.setData({
+    //         isLoading: false
+    //       });
+    //     }, 300);
+    //     GoodList = res.data;
+    //     _this.initData();
+    //   }
+    // })
+
+    // 模拟获取数据
+    setTimeout(() => {
+      _this.setData({
+        isLoading: false
+      });
+    }, 300);
+    GoodList = goodlistdata;
+    _this.initData();
+
     // 初始化scroll-view高度
     var that = this;
     wx.getSystemInfo({

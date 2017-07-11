@@ -1,7 +1,7 @@
 var app = getApp();
 var Zan = require('../../dist/index');
 var WxParse = require('../../wxParse/wxParse.js');
-// var GoodData = require('../../GoodData.js');
+var gooddata = require('../../GoodData.js');
 var GoodData = {};
 var storeId = 123;
 
@@ -83,14 +83,16 @@ Page(Object.assign({}, Zan.Quantity, Zan.TopTips, {
   },
   onLoad(option) {
     let _this = this;
-    wx.request({
-      url: 'https://xcxkj.tech/xcxi/weixin/goods/' + storeId + '/' + option.gid,
-      data: {},
-      success: function (res) {
-        GoodData = res.data;
-        _this.initData();
-      }
-    });
+    // wx.request({
+    //   url: 'https://xcxkj.tech/xcxi/weixin/goods/' + storeId + '/' + option.gid,
+    //   data: {},
+    //   success: function (res) {
+    //     GoodData = res.data;
+    //     _this.initData();
+    //   }
+    // });
+    GoodData = gooddata;
+    _this.initData();
   },
   onShow() {
     this.upDateCount();

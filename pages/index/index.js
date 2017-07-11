@@ -2,6 +2,8 @@ var Zan = require('../../dist/index');
 var GoodList = {};
 var app = getApp();
 
+var goodlistdata = require('../../GoodList.js');
+
 Page(Object.assign({}, Zan.Tab, {
   data: {
     isLoading: true,
@@ -10,19 +12,28 @@ Page(Object.assign({}, Zan.Tab, {
   },
   onLoad: function () {
     let _this = this;
-    wx.request({
-      url: 'https://xcxkj.tech/xcxi/weixin/goods/goodlist',
-      data: {},
-      success: function (res) {
-        setTimeout(() => {
-          _this.setData({
-            isLoading: false
-          });
-        }, 300);
-        GoodList = res.data;
-        _this.initData();
-      }
-    })
+    // wx.request({
+    //   url: 'https://xcxkj.tech/xcxi/weixin/goods/goodlist',
+    //   data: {},
+    //   success: function (res) {
+    //     setTimeout(() => {
+    //       _this.setData({
+    //         isLoading: false
+    //       });
+    //     }, 300);
+    //     GoodList = res.data;
+    //     _this.initData();
+    //   }
+    // })
+    
+    // 模拟获取数据
+    setTimeout(() => {
+      _this.setData({
+        isLoading: false
+      });
+    }, 300);
+    GoodList = goodlistdata;
+    _this.initData();
 
     app.getStorageCart();
   },

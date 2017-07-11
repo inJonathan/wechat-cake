@@ -1,5 +1,6 @@
 var app = getApp();
 var Zan = require('../../dist/index');
+var goodlistdata = require('../../GoodList.js');
 var GoodList = {};
 
 Page(Object.assign({}, Zan.Quantity, {
@@ -115,45 +116,79 @@ Page(Object.assign({}, Zan.Quantity, {
       return;
     }
 
-    wx.request({
-      url: 'https://xcxkj.tech/xcxi/weixin/goods/goodlist',
-      data: {},
-      success: function (res) {
-        GoodList = res.data;
-        setTimeout(() => {
-          // 遍历出所有商品，获得对应id的商品信息
-          GoodList.type.forEach((i) => {
-            i.goods.forEach((j) => {
-              selectGoods.forEach((k, index) => {
-                if (j.gid == k.gid) {
-                  let goodItem = {
-                    gid: j.gid,
-                    pic: j.pic,
-                    name: j.name,
-                    kindName: "规格1",
-                    price: j.currentPrice,
-                    value: j.gid,
-                    checked: true,
-                    count: k.count,
-                    quantity: {
-                      quantity: k.count,
-                      min: 1,
-                      max: k.stock
-                    }
-                  }
-                  goodArr.push(goodItem);
+    // wx.request({
+    //   url: 'https://xcxkj.tech/xcxi/weixin/goods/goodlist',
+    //   data: {},
+    //   success: function (res) {
+    //     GoodList = res.data;
+    //     setTimeout(() => {
+    //       // 遍历出所有商品，获得对应id的商品信息
+    //       GoodList.type.forEach((i) => {
+    //         i.goods.forEach((j) => {
+    //           selectGoods.forEach((k, index) => {
+    //             if (j.gid == k.gid) {
+    //               let goodItem = {
+    //                 gid: j.gid,
+    //                 pic: j.pic,
+    //                 name: j.name,
+    //                 kindName: "规格1",
+    //                 price: j.currentPrice,
+    //                 value: j.gid,
+    //                 checked: true,
+    //                 count: k.count,
+    //                 quantity: {
+    //                   quantity: k.count,
+    //                   min: 1,
+    //                   max: k.stock
+    //                 }
+    //               }
+    //               goodArr.push(goodItem);
+    //             }
+    //           })
+    //         })
+    //       });
+    //       _this.setData({
+    //         checkboxItems: goodArr,
+    //         isLoading: false
+    //       });
+    //       _this.upDateTotal();
+    //     }, 300);
+    //   }
+    // });
+
+    GoodList = goodlistdata;
+    setTimeout(() => {
+      // 遍历出所有商品，获得对应id的商品信息
+      GoodList.type.forEach((i) => {
+        i.goods.forEach((j) => {
+          selectGoods.forEach((k, index) => {
+            if (j.gid == k.gid) {
+              let goodItem = {
+                gid: j.gid,
+                pic: j.pic,
+                name: j.name,
+                kindName: "规格1",
+                price: j.currentPrice,
+                value: j.gid,
+                checked: true,
+                count: k.count,
+                quantity: {
+                  quantity: k.count,
+                  min: 1,
+                  max: k.stock
                 }
-              })
-            })
-          });
-          _this.setData({
-            checkboxItems: goodArr,
-            isLoading: false
-          });
-          _this.upDateTotal();
-        }, 300);
-      }
-    });
+              }
+              goodArr.push(goodItem);
+            }
+          })
+        })
+      });
+      _this.setData({
+        checkboxItems: goodArr,
+        isLoading: false
+      });
+      _this.upDateTotal();
+    }, 300);
   },
   upDateTotal() { // 更新总价
     let totalPrice = 0;
