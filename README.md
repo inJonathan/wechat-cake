@@ -5,13 +5,10 @@
   
 ### 效果图  
   
-首页  
-![Demo](http://oiivm9udq.bkt.clouddn.com/demo/cake-index.gif)  
+首页 [GifDemo](http://oiivm9udq.bkt.clouddn.com/demo/cake-index.gif)  
   
-详情页  
-![Demo](http://oiivm9udq.bkt.clouddn.com/demo/cake-detail.gif)  
+详情页 [GifDemo](http://oiivm9udq.bkt.clouddn.com/demo/cake-detail.gif)  
   
-购物车  
-![Demo](http://oiivm9udq.bkt.clouddn.com/demo/cake-cart.gif)  
+购物车 [GifDemo](http://oiivm9udq.bkt.clouddn.com/demo/cake-cart.gif)  
 
 
