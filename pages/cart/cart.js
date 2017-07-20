@@ -167,7 +167,7 @@ Page(Object.assign({}, Zan.Quantity, {
                 gid: j.gid,
                 pic: j.pic,
                 name: j.name,
-                kindName: "规格1",
+                kindName: "规格1", // 判断选择规格部分目前没有完成，这里默认都是规格1
                 price: j.currentPrice,
                 value: j.gid,
                 checked: true,
@@ -230,5 +230,10 @@ Page(Object.assign({}, Zan.Quantity, {
   },
   goConfirm() {
     console.log(this.data.checkboxItems)
+  },
+  goIndex() {
+    wx.switchTab({
+      url: '../index/index'
+    });
   }
 }));

@@ -2,6 +2,7 @@ var app = getApp();
 var Zan = require('../../dist/index');
 var WxParse = require('../../wxParse/wxParse.js');
 var gooddata = require('../../GoodData.js');
+var gooddata_other = require('../../GoodData_other.js');
 var GoodData = {};
 var storeId = 123;
 
@@ -91,7 +92,14 @@ Page(Object.assign({}, Zan.Quantity, Zan.TopTips, {
     //     _this.initData();
     //   }
     // });
-    GoodData = gooddata;
+
+    // 这里判断仅做测试不同详情页使用，实际开发应通过列表页传过来的gid去请求服务器数据
+    if (option.gid == 4) {
+      GoodData = gooddata_other
+    } else {
+      GoodData = gooddata;
+    }
+
     _this.initData();
   },
   onShow() {

@@ -1,7 +1,10 @@
 <import src="../../dist/quantity/index.wxml" />
 <import src="/dist/loadmore/index.wxml" />
 
-<view class="container" wx:if="{{empty}}">购物车为空</view>
+<view class="container empty" wx:if="{{empty}}">
+  <view class="empty-text">购物车为空，快到商城挑选一些商品吧！</view>
+  <button class="weui-btn mini-btn empty-btn" size="mini" bindtap="goIndex">立即前往挑选</button>
+</view>
 
 <view wx:if="{{!empty}}">
 
@@ -18,7 +21,7 @@
             </view>
           </label>
         </checkbox-group>
-        <view class="zan-ellipsis top-title" bindtap="goIndex">寿司的屋</view>
+        <view class="zan-ellipsis top-title" bindtap="goIndex">天天蛋糕店</view>
         <button class="weui-btn mini-btn" size="mini" bindtap="toggleEdit" style="float:right;color:#f44;margin:0;">
           <text hidden="{{isEdit}}">编辑</text>
           <text hidden="{{!isEdit}}">完成</text>

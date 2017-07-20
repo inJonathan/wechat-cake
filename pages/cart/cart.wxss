@@ -112,3 +112,18 @@
   background: #f44;
   color: #fff;
 }
+
+.empty {
+  text-align: center;
+}
+
+.empty-text {
+  margin: 50rpx 0;
+  color: #c9c9c9;
+}
+
+.empty-btn {
+  display: inline-block;
+  margin-top: 0;
+  color: #f44;
+}
