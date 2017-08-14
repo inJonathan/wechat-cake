@@ -37,6 +37,7 @@
     </view>
   </view>
 
+  <!-- 弹出层 -->
   <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
     <view class="zan-dialog__mask" bindtap="toggleDialog" />
 
@@ -53,7 +54,7 @@
             <view class="dlog_count">
               <text>库存：</text>{{total}}</view>
             <view class="dlog_selected">
-              <text>已选：</text>{{currkind}}</view>
+              <text>已选：</text>{{kindName}}</view>
           </view>
         </view>
 
