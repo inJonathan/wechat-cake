@@ -1,15 +1,13 @@
 <import src="../../dist/quantity/index.wxml" />
 <import src="/dist/loadmore/index.wxml" />
 
-<view class="container empty" wx:if="{{empty}}">
+<view class="container empty" wx:if="{{empty}}" style="z-index: 9;">
   <view class="empty-text">购物车为空，快到商城挑选一些商品吧！</view>
   <button class="weui-btn mini-btn empty-btn" size="mini" bindtap="goIndex">立即前往挑选</button>
 </view>
 
 <view wx:if="{{!empty}}">
-
-  <view class="container">
-
+  <view class="container hasgoods">
     <view class="weui-cell" style="background-color:#fff;padding-left:5px;">
       <view class="weui-cell__hd" style="width:100%;">
         <checkbox-group bindchange="checkAll" class="check-all">
@@ -51,7 +49,7 @@
             </view>
             <view wx:if="{{isEdit}}" style="width:100%;">
               <template is="zan-quantity" data="{{ ...checkboxItems[index].quantity, componentId: 'checkboxItems['+index+'].quantity', size: 'small' }}" />
-              <button class="del-btn" bindtap="delGood" data-gid="{{checkboxItems[index].gid}}">删除</button>
+              <button class="del-btn" bindtap="delGood" data-gid="{{checkboxItems[index].gid}}" data-kid="{{checkboxItems[index].kid}}">删除</button>
             </view>
           </view>
         </view>
@@ -66,5 +64,4 @@
     </view>
     <view class="clearing {{unable}}" bindtap="goConfirm">结算</view>
   </view>
-
 </view>

@@ -1,4 +1,4 @@
-.container {
+.container.hasgoods {
   padding-bottom: 65px;
 }
 

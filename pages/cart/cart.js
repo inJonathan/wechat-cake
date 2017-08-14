@@ -91,7 +91,7 @@ Page(Object.assign({}, Zan.Quantity, {
     checkboxItems.forEach((i, j) => {
       if (j == componentId.replace(/[^0-9]/ig, "")) {
         i.count = quantity;
-        selectGoods.forEach((k, o)=>{
+        selectGoods.forEach((k, o) => {
           if (o == componentId.replace(/[^0-9]/ig, "")) {
             app.globalData.selectGoods[o] = i;
           }
@@ -115,73 +115,25 @@ Page(Object.assign({}, Zan.Quantity, {
       });
       return;
     }
-
-    // wx.request({
-    //   url: 'https://xcxkj.tech/xcxi/weixin/goods/goodlist',
-    //   data: {},
-    //   success: function (res) {
-    //     GoodList = res.data;
-    //     setTimeout(() => {
-    //       // 遍历出所有商品，获得对应id的商品信息
-    //       GoodList.type.forEach((i) => {
-    //         i.goods.forEach((j) => {
-    //           selectGoods.forEach((k, index) => {
-    //             if (j.gid == k.gid) {
-    //               let goodItem = {
-    //                 gid: j.gid,
-    //                 pic: j.pic,
-    //                 name: j.name,
-    //                 kindName: "规格1",
-    //                 price: j.currentPrice,
-    //                 value: j.gid,
-    //                 checked: true,
-    //                 count: k.count,
-    //                 quantity: {
-    //                   quantity: k.count,
-    //                   min: 1,
-    //                   max: k.stock
-    //                 }
-    //               }
-    //               goodArr.push(goodItem);
-    //             }
-    //           })
-    //         })
-    //       });
-    //       _this.setData({
-    //         checkboxItems: goodArr,
-    //         isLoading: false
-    //       });
-    //       _this.upDateTotal();
-    //     }, 300);
-    //   }
-    // });
-
-    GoodList = goodlistdata;
+    // 从globalData中获得选中的商品在购物车展示出来
     setTimeout(() => {
-      // 遍历出所有商品，获得对应id的商品信息
-      GoodList.type.forEach((i) => {
-        i.goods.forEach((j) => {
-          selectGoods.forEach((k, index) => {
-            if (j.gid == k.gid) {
-              let goodItem = {
-                gid: j.gid,
-                pic: j.pic,
-                name: j.name,
-                kindName: "规格1", // 判断选择规格部分目前没有完成，这里默认都是规格1
-                price: j.currentPrice,
-                value: j.gid,
-                checked: true,
-                count: k.count,
-                quantity: {
-                  quantity: k.count,
-                  min: 1,
-                  max: k.stock
-                }
-              }
-              goodArr.push(goodItem);
-            }
-          })
-        })
+      selectGoods.forEach((k, index) => {
+        let goodItem = {
+          gid: k.gid,
+          pic: k.smpic,
+          name: k.goodName,
+          kid: k.kid,
+          kindName: k.kindName,
+          price: k.currentPrice,
+          checked: true,
+          count: k.count,
+          quantity: {
+            quantity: k.count,
+            min: 1,
+            max: k.total
+          }
+        }
+        goodArr.push(goodItem);
       });
       _this.setData({
         checkboxItems: goodArr,
@@ -217,11 +169,12 @@ Page(Object.assign({}, Zan.Quantity, {
       duration: 500
     });
 
-    let delId = e.currentTarget.dataset.gid;
+    let delGid = e.currentTarget.dataset.gid;
+    let delKid = e.currentTarget.dataset.kid;
     let selectGoods = app.globalData.selectGoods;
     let arr = [];
     selectGoods.forEach((i) => {
-      if (delId != i.gid) {
+      if (delKid != i.kid) {
         arr.push(i);
       }
     })

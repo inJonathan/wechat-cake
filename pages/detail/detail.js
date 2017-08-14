@@ -4,17 +4,16 @@ var WxParse = require('../../wxParse/wxParse.js');
 var gooddata = require('../../GoodData.js');
 var gooddata_other = require('../../GoodData_other.js');
 var GoodData = {};
-var storeId = 123;
 
 Page(Object.assign({}, Zan.Quantity, Zan.TopTips, {
   data: {
     imgUrls: [],
     goodName: "加载中...",
-    now: "0.00",
-    old: "0.00",
+    currentPrice: "0.00",
+    originalPrice: "0.00",
     detail: "",
     kinds: [],
-    currkind: "",
+    kindName: "",
     current: 0,
     total: 0,
     count: 1,
@@ -51,41 +50,42 @@ Page(Object.assign({}, Zan.Quantity, Zan.TopTips, {
   addToCart() { // 加入购物车
     let flag = true;
     let num = 0;
-    if (app.globalData.selectGoods.length > 0) {
-      app.globalData.selectGoods.forEach((item, index) => {
-        if (item.gid == GoodData.gid) {
-          num = app.globalData.selectGoods[index].count;
-          app.globalData.selectGoods.splice(index, 1); // 删除重复数据
-          flag = false;
-        }
-      })
-    }
 
+    app.globalData.selectGoods.forEach((item, index) => {
+      // 通过唯一的kid判断购物车是否已经存在商品
+      if (this.data.kid == item.kid) {
+        flag = false;
+      }
+    });
+    
     if (flag) {
       app.globalData.selectGoods.push({
+        "goodName": this.data.goodName,
         "gid": GoodData.gid,
         "kid": this.data.kid,
+        "currentPrice": this.data.currentPrice,
+        "kindName": this.data.kindName,
+        "smpic": this.data.smpic,
+        "total": this.data.total,
         "count": this.data.count,
         "checked": true
       });
+      this.upDateCount();
+      this.showZanTopTips('加入购物城成功');
+      console.log(app.globalData.selectGoods);
     } else {
-      app.globalData.selectGoods.push({
-        "gid": GoodData.gid,
-        "kid": this.data.kid,
-        "count": this.data.count + num,
-        "checked": true
+      wx.showToast({
+        title: '已在购物车',
+        icon: 'success',
+        duration: 1000
       });
-      flag = true;
     }
-
-    this.upDateCount();
-    this.showZanTopTips('加入购物城成功');
     this.toggleDialog();
   },
   onLoad(option) {
     let _this = this;
     // wx.request({
-    //   url: 'https://xcxkj.tech/xcxi/weixin/goods/' + storeId + '/' + option.gid,
+    //   url: 'https://xxx' + option.gid, // 通过商品ID请求相应数据
     //   data: {},
     //   success: function (res) {
     //     GoodData = res.data;
@@ -117,12 +117,12 @@ Page(Object.assign({}, Zan.Quantity, Zan.TopTips, {
     this.setData({
       current: event.currentTarget.dataset.current,
       kid: GoodData.kinds[event.currentTarget.dataset.current].kid,
-      currkind: GoodData.kinds[event.currentTarget.dataset.current].kindName,
-      total: GoodData.kinds[event.currentTarget.dataset.current].stock,
+      kindName: GoodData.kinds[event.currentTarget.dataset.current].kindName,
+      total: GoodData.kinds[event.currentTarget.dataset.current].total,
       quantity: {
         quantity: 1,
         min: 1,
-        max: GoodData.kinds[event.currentTarget.dataset.current].stock
+        max: GoodData.kinds[event.currentTarget.dataset.current].total
       },
       smpic: GoodData.kinds[event.currentTarget.dataset.current].smpic
     });
@@ -141,16 +141,16 @@ Page(Object.assign({}, Zan.Quantity, Zan.TopTips, {
     this.setData({
       imgUrls: GoodData.pics,
       goodName: GoodData.name,
-      now: GoodData.currentPrice,
-      old: GoodData.originalPrice,
+      currentPrice: GoodData.currentPrice,
+      originalPrice: GoodData.originalPrice,
       kinds: GoodData.kinds,
       kid: GoodData.kinds[0].kid,
-      currkind: GoodData.kinds[0].kindName,
-      total: GoodData.kinds[0].stock,
+      kindName: GoodData.kinds[0].kindName,
+      total: GoodData.kinds[0].total,
       quantity: {
         quantity: 1,
         min: 1,
-        max: GoodData.kinds[0].stock
+        max: GoodData.kinds[0].total
       },
       smpic: GoodData.kinds[0].smpic
     });

@@ -13,7 +13,7 @@ Page(Object.assign({}, Zan.Tab, {
   onLoad: function () {
     let _this = this;
     // wx.request({
-    //   url: 'https://xcxkj.tech/xcxi/weixin/goods/goodlist',
+    //   url: '', // 请求url
     //   data: {},
     //   success: function (res) {
     //     setTimeout(() => {
@@ -21,7 +21,7 @@ Page(Object.assign({}, Zan.Tab, {
     //         isLoading: false
     //       });
     //     }, 300);
-    //     GoodList = res.data;
+    //     GoodList = res.data; // 将获得的数据赋值
     //     _this.initData();
     //   }
     // })
@@ -32,7 +32,7 @@ Page(Object.assign({}, Zan.Tab, {
         isLoading: false
       });
     }, 300);
-    GoodList = goodlistdata;
+    GoodList = goodlistdata; // 使用模拟数据赋值
     _this.initData();
 
     app.getStorageCart();

@@ -1,7 +1,7 @@
 module.exports = {
   "msg": "操作成功",
   "code": "00000",
-  "gid": "4",
+  "gid": 4,
   "name": "薄荷番石榴汁",
   "pics": [
     {
@@ -21,17 +21,14 @@ module.exports = {
   "originalPrice": "18.00",
   "kinds": [
     {
-      "kindName": "规格1",
-      "total": 13,
-      "smpic": "http://cp2.douguo.net/upload/caiku/d/4/8/400_d49e66267331b23d75358d17d492ad28.jpg"
-    },
-    {
-      "kindName": "规格2",
+      "kid": 5,
+      "kindName": "去冰",
       "total": 8,
       "smpic": "http://news.iyaxin.com/attachement/jpg/site2/20121211/d4bed9e601741230db5431.jpg"
     },
     {
-      "kindName": "规格3",
+      "kid": 4,
+      "kindName": "加冰",
       "total": 21,
       "smpic": "http://api.upload1.pimg.cn/user_upload/14e64bf53eb648428268843f540e2150.png_thumb_750x%3E_quality_95_.png"
     }

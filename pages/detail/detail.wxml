@@ -15,8 +15,8 @@
   <view class="zan-panel">
     <view style="padding: 15px;">
       <text class="title">{{goodName}}</text>
-      <text class="now">￥{{now}}</text>
-      <text class="old">￥{{old}}</text>
+      <text class="now">￥{{currentPrice}}</text>
+      <text class="old">￥{{originalPrice}}</text>
     </view>
   </view>
 
@@ -24,7 +24,7 @@
     <view class="zan-cell zan-cell--access" bindtap="toggleDialog">
       <view class="select">已选</view>
       <view class="zan-cell__bd">
-        <view class="">{{currkind}}</view>
+        <view class="">{{kindName}}</view>
       </view>
       <view class="icon"></view>
     </view>
@@ -49,7 +49,7 @@
         <view class="dlog_box" style="padding-top:20px;">
           <image src="{{smpic}}" class="dlog_img" />
           <view class="right">
-            <view class="dlog_price">￥{{now}}</view>
+            <view class="dlog_price">￥{{currentPrice}}</view>
             <view class="dlog_count">
               <text>库存：</text>{{total}}</view>
             <view class="dlog_selected">
