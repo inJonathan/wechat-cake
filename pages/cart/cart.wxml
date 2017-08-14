@@ -1,4 +1,5 @@
 <import src="../../dist/quantity/index.wxml" />
+<import src="/dist/toast/index.wxml" />
 <import src="/dist/loadmore/index.wxml" />
 
 <view class="container empty" wx:if="{{empty}}" style="z-index: 9;">
@@ -65,3 +66,5 @@
     <view class="clearing {{unable}}" bindtap="goConfirm">结算</view>
   </view>
 </view>
+
+<template is="zan-toast" data="{{ zanToast }}"></template>

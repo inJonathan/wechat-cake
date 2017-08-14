@@ -34,8 +34,6 @@ Page(Object.assign({}, Zan.Tab, {
     }, 300);
     GoodList = goodlistdata; // 使用模拟数据赋值
     _this.initData();
-
-    app.getStorageCart();
   },
   initData() {
     let orderArr = [];

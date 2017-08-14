@@ -3,7 +3,7 @@ var Zan = require('../../dist/index');
 var goodlistdata = require('../../GoodList.js');
 var GoodList = {};
 
-Page(Object.assign({}, Zan.Quantity, {
+Page(Object.assign({}, Zan.Quantity, Zan.Toast, {
   data: {
     empty: false,
     isLoading: true,
@@ -19,6 +19,7 @@ Page(Object.assign({}, Zan.Quantity, {
   checkboxChange: function (e) {
     // 子项影响全选
     let allItems = this.data.checkboxItems.length;
+    // 判断全选的情况
     if (e.detail.value.length == allItems) {
       this.setData({
         checkAll: true
@@ -29,11 +30,12 @@ Page(Object.assign({}, Zan.Quantity, {
       });
     }
     // 处理选择一项
+    // 系统会自动识别选中项的携带值，用e.detail.value获得
     var checkboxItems = this.data.checkboxItems, values = e.detail.value;
     for (var i = 0, lenI = checkboxItems.length; i < lenI; ++i) {
-      checkboxItems[i].checked = false;
+      checkboxItems[i].checked = false; // 先清空所有选中
       for (var j = 0, lenJ = values.length; j < lenJ; ++j) {
-        if (checkboxItems[i].value == values[j]) {
+        if (checkboxItems[i].value == values[j]) { // 通过values来匹配选中项
           checkboxItems[i].checked = true;
           break;
         }
@@ -103,7 +105,7 @@ Page(Object.assign({}, Zan.Quantity, {
     });
     this.upDateTotal();
   },
-  upDateList() {
+  upDateList() { // 更新购物列表
     let _this = this;
     let selectGoods = app.globalData.selectGoods;
     let goodArr = [];
@@ -122,6 +124,7 @@ Page(Object.assign({}, Zan.Quantity, {
           gid: k.gid,
           pic: k.smpic,
           name: k.goodName,
+          value: k.kid,
           kid: k.kid,
           kindName: k.kindName,
           price: k.currentPrice,
@@ -181,8 +184,21 @@ Page(Object.assign({}, Zan.Quantity, {
     app.globalData.selectGoods = arr;
     this.upDateList();
   },
-  goConfirm() {
-    console.log(this.data.checkboxItems)
+  goConfirm() { // 点击结算按钮
+    let _this = this;
+    let account = [];
+    let checkboxItems = this.data.checkboxItems;
+    checkboxItems.forEach((item,index) => {
+      if (item.checked) {
+        account.push(checkboxItems[index]);
+      }
+    });
+    if (account.length > 0) {
+      console.log('结算：');
+      console.log(account);
+    } else {
+        this.showZanToast('未选择商品！');
+    }
   },
   goIndex() {
     wx.switchTab({
