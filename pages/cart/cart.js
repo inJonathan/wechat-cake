@@ -32,9 +32,9 @@ Page(Object.assign({}, Zan.Quantity, Zan.Toast, {
     // 处理选择一项
     // 系统会自动识别选中项的携带值，用e.detail.value获得
     var checkboxItems = this.data.checkboxItems, values = e.detail.value;
-    for (var i = 0, lenI = checkboxItems.length; i < lenI; ++i) {
+    for (var i = 0, lenI = checkboxItems.length; i < lenI; i++) {
       checkboxItems[i].checked = false; // 先清空所有选中
-      for (var j = 0, lenJ = values.length; j < lenJ; ++j) {
+      for (var j = 0, lenJ = values.length; j < lenJ; j++) {
         if (checkboxItems[i].value == values[j]) { // 通过values来匹配选中项
           checkboxItems[i].checked = true;
           break;

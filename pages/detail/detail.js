@@ -124,7 +124,8 @@ Page(Object.assign({}, Zan.Quantity, Zan.TopTips, {
         min: 1,
         max: GoodData.kinds[event.currentTarget.dataset.current].total
       },
-      smpic: GoodData.kinds[event.currentTarget.dataset.current].smpic
+      smpic: GoodData.kinds[event.currentTarget.dataset.current].smpic,
+      count: 1
     });
   },
   goIndex() {
